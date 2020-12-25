@@ -23,11 +23,15 @@ $.ajax({url:"https://api.krzana.com/v3/publications?channel_ids[]=32735&limit=40
     const article = data.map(article => {
         return {
             author: article.author_name,
+            origiN: article.origin,
             url: article.source_url,
-
+            description: article.teaser_text
         }
+        
     })
+    console.log(article);
 })
+
 
 
 
