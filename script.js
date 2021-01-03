@@ -20,13 +20,11 @@
 
 $.ajax({url:"https://api.krzana.com/v3/publications?channel_ids[]=32735&limit=40"}).then( data => {
     console.log(data);
-    const article = data.map(article => {
-         $('#articleC').html(article.author_name);
-            // author: article.author_name,
-            // origiN: article.origin,
-            // url: article.source_url,
-            // description: article.teaser_text
-        
+    const article = data.forEach(article => {
+         $('.articleContent').html(article.author_name);
+         $('.featuredImage').html(article.teaser_text);
+         $('.article').html(article.source_url);
+         $('.impressions').html(article.origin);    
         
     })
     console.log(article);
