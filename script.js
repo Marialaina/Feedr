@@ -64,11 +64,13 @@ $.ajax({url:"https://api.krzana.com/v3/publications?channel_ids[]=32735&limit=40
       //if the character i end on is not a space i want to iterate over the remaining string until i get to a space.
       //find character 150 which is going to be [] 150 and from there have a while loop or do loop until i find the space.
       
-      teaser.textContent = article.teaser_text.slice(0, 150) + "...";
+      teaser.textContent = article.teaser_text;
       teaser.classList.add('teaser');
+      //.split turns the string into an array
+      teaser.innerText = teaser.innerText.split('').slice(0, 150).join('') + '...'
       section.append(teaser);
       
-      console.log();
+      console.log(teaser);
       
       fix.classList.add('clearfix');
       
